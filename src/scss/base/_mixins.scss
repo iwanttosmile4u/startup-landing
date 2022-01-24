@@ -1,1 +1,34 @@
 @use './variables' as *;
+
+@mixin base-font-style($color, $f-size, $f-weight) {
+  color: $color;
+  font-size: $f-size;
+  font-weight: $f-weight;
+}
+
+@mixin row-centered($display: flex, $j-content: center, $a-items: center) {
+  display: $display;
+  justify-content: $j-content;
+  align-items: $a-items;
+}
+
+@mixin universal-flex($display, $direction, $j-content, $a-items) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $j-content;
+  align-items: $a-items;
+}
+
+@mixin btn(
+  $bgr: $dark-bgr,
+  $b-style: none,
+  $b-radius,
+  $color: $main-color,
+  $cursor: pointer
+) {
+  background: $bgr;
+  border-style: $b-style;
+  border-radius: $b-radius;
+  color: $color;
+  cursor: $cursor;
+}

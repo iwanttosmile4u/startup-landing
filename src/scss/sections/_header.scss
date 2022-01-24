@@ -1,1 +1,78 @@
+@use '../base/index' as *;
 
+.header {
+  &__container {
+    @include universal-flex(flex, column, unset, unset);
+    background: $dark-bgr;
+    position: fixed;
+    width: 100%;
+    padding: 10px 40px 20px 0;
+  }
+
+  &__wrapper {
+    @include universal-flex(flex, row, space-between, center);
+  }
+
+  &__menu-btn {
+    @include row-centered;
+    @include universal-flex(flex, column, center, center);
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  &__burger-btn {
+    width: 35px;
+    height: 3px;
+    background: $main-color;
+    border-radius: $universal-border;
+    margin: 2px auto;
+  }
+}
+
+.navbar {
+  height: 0;
+  overflow: hidden;
+  padding-left: 20px;
+  &__item {
+    list-style: none;
+    width: 128px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  &__item-link {
+    @include base-font-style($main-color, 16px, bold);
+    transition: 0.7s ease;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  &__btn {
+    @include base-font-style($main-color, 16px, bold);
+    border-radius: 100rem;
+    padding: 0.5rem 2rem;
+    border: solid 3px transparent;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      $gradient-color;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+
+    &:hover {
+      box-shadow: none;
+      color: white;
+    }
+  }
+}
+
+.nav-open {
+  height: 100vh;
+  @include universal-flex(flex, column, unset, center);
+  transition: 1s ease-in-out;
+}

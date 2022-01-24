@@ -1,0 +1,37 @@
+@use '../../base/index' as *;
+
+@media (min-width: 992px) {
+  .header {
+    &__container {
+      @include universal-flex(flex, row, space-between, center);
+    }
+
+    &__menu-btn {
+      display: none;
+    }
+  }
+
+  .navbar {
+    @include universal-flex(flex, row, space-between, center);
+    gap: 40px;
+    height: auto;
+    &__list {
+      text-align: center;
+      gap: 40px;
+    }
+
+    &__item {
+      display: inline-block;
+      border-bottom: none;
+    }
+
+    &__item-link {
+      font-size: 18px;
+    }
+
+    &__btn {
+      display: inline-block;
+      font-size: 18px;
+    }
+  }
+}
