@@ -1,0 +1,54 @@
+@use '../base/index' as *;
+
+.navigation {
+  display: none;
+  &__open {
+    @include universal-flex(flex, column, center, center);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 100px;
+  }
+  &__menu {
+    @include universal-flex(flex, column, center, center);
+    gap: 20px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.menu {
+  &__list {
+    @include universal-flex(flex, column, space-between, center);
+    gap: 20px;
+  }
+  &__list-item {
+    @include base-font-style($main-color, 18px, bold);
+    cursor: pointer;
+
+    &:hover {
+      color: $hover-color;
+      transition: 0.7s ease-in-out;
+    }
+  }
+
+  &__btn {
+    @include base-font-style($main-color, 18px, bold);
+    border-radius: 100rem;
+    padding: 0.5rem 2rem;
+    border: solid 3px transparent;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      $gradient-color;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+
+    &:hover {
+      box-shadow: none;
+      color: white;
+    }
+  }
+}

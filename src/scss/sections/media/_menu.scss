@@ -1,0 +1,16 @@
+@use '../../base/index' as *;
+
+@media (min-width: 992px) {
+  .navigation {
+    display: block;
+  }
+  .menu {
+    @include universal-flex(flex, row, space-between, center);
+    gap: 30px;
+
+    &__list {
+      @include universal-flex(flex, row, space-between, center);
+      gap: 50px;
+    }
+  }
+}

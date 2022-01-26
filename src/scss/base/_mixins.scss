@@ -6,12 +6,6 @@
   font-weight: $f-weight;
 }
 
-@mixin row-centered($display: flex, $j-content: center, $a-items: center) {
-  display: $display;
-  justify-content: $j-content;
-  align-items: $a-items;
-}
-
 @mixin universal-flex($display, $direction, $j-content, $a-items) {
   display: $display;
   flex-direction: $direction;

@@ -2,77 +2,98 @@
 
 .header {
   &__container {
-    @include universal-flex(flex, column, unset, unset);
-    background: $dark-bgr;
+    @include universal-flex(flex, row, space-between, center);
     position: fixed;
+    top: 0;
     width: 100%;
-    padding: 10px 40px 20px 0;
+    height: auto;
+    padding-right: 25px;
+  }
+  &__branding {
+    @include universal-flex(flex, row, unset, unset);
+    position: relative;
   }
 
-  &__wrapper {
-    @include universal-flex(flex, row, space-between, center);
+  &__logo-link {
+    transform: scale(1);
+
+    svg {
+      &:hover path {
+        fill: $hover-color;
+      }
+    }
+  }
+
+  &__logo-title {
+    position: absolute;
+    top: 33px;
+    left: 85px;
+  }
+
+  &__title-item {
+    @include base-font-style($main-color, 30px, bold);
+    text-transform: uppercase;
   }
 
   &__menu-btn {
-    @include row-centered;
-    @include universal-flex(flex, column, center, center);
+    @include universal-flex(flex, row, center, center);
     width: 40px;
     height: 30px;
+    position: relative;
     cursor: pointer;
+    margin-bottom: 30px;
+    transition: all 0.8s ease-in-out;
   }
 
   &__burger-btn {
-    width: 35px;
-    height: 3px;
+    width: 30px;
+    height: 2px;
     background: $main-color;
     border-radius: $universal-border;
-    margin: 2px auto;
-  }
-}
+    transition: all 0.8s ease-in-out;
 
-.navbar {
-  height: 0;
-  overflow: hidden;
-  padding-left: 20px;
-  &__item {
-    list-style: none;
-    width: 128px;
-    margin: 20px 0;
-    text-align: center;
-  }
-
-  &__item-link {
-    @include base-font-style($main-color, 16px, bold);
-    transition: 0.7s ease;
-
-    &:hover {
-      color: $hover-color;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: $main-color;
+      border-radius: $universal-border;
+      transition: all 0.8s ease-in-out;
     }
-  }
 
-  &__btn {
-    @include base-font-style($main-color, 16px, bold);
-    border-radius: 100rem;
-    padding: 0.5rem 2rem;
-    border: solid 3px transparent;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0)
-      ),
-      $gradient-color;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: $main-color;
+      border-radius: $universal-border;
+      transition: all 0.8s ease-in-out;
+    }
 
-    &:hover {
-      box-shadow: none;
-      color: white;
+    &::before {
+      transform: translateY(-6px);
+    }
+
+    &::after {
+      transform: translateY(6px);
     }
   }
 }
 
-.nav-open {
-  height: 100vh;
-  @include universal-flex(flex, column, unset, center);
-  transition: 1s ease-in-out;
+.burger-open {
+  &__burger-btn {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+    &::before {
+      background: $hover-color;
+      transform: rotate(45deg) translate(35px, -35px);
+    }
+    &::after {
+      background: $hover-color;
+      transform: rotate(-45deg) translate(35px, 35px);
+    }
+  }
 }
