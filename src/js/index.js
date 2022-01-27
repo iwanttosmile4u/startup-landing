@@ -21,9 +21,15 @@ menuBtn.addEventListener('click', () => {
 const showMenu = (btn, menuList) => {
   const toggleBtn = document.querySelector(btn);
   const menu = document.querySelector(menuList);
+  const main = document.querySelector('.main');
   if (toggleBtn && menu) {
     toggleBtn.addEventListener('click', () => {
       menu.classList.toggle('navigation__open');
+      if (document.querySelector('.navigation__open')) {
+        main.style.marginTop = '350px';
+      } else {
+        main.style.marginTop = '150px';
+      }
     });
   }
 };
