@@ -3,11 +3,13 @@
 .header {
   &__container {
     @include universal-flex(flex, row, space-between, center);
+    background: $dark-bgr;
     position: fixed;
     top: 0;
     width: 100%;
     height: auto;
     padding-right: 25px;
+    z-index: 20;
   }
   &__branding {
     @include universal-flex(flex, row, unset, unset);
@@ -19,7 +21,8 @@
 
     svg {
       &:hover path {
-        fill: $hover-color;
+        fill: $main-color;
+        transition: 0.8s ease;
       }
     }
   }

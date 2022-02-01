@@ -1,0 +1,48 @@
+@use '../base/index' as *;
+
+.slider {
+  @include universal-flex(flex, column, center, center);
+  padding: 0 30px 50px;
+  &__card {
+    position: relative;
+    padding: 25px 30px;
+    margin-bottom: 50px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+      box-shadow: inset rgb(23, 24, 23) 0 0 10px, rgb(70, 66, 66) 0 0 25px;
+    }
+  }
+  &__img {
+    min-width: 230px;
+  }
+
+  &__img-item {
+    width: 100%;
+  }
+
+  &__title {
+    @include base-font-style($main-color, 26px, bold);
+  }
+
+  &__description {
+    @include base-font-style($description-color, 14px, lighter);
+    line-height: 22px;
+    text-align: justify;
+  }
+
+  &__nav-auto {
+    display: none;
+  }
+
+  &__nav-manual {
+    display: none;
+  }
+}

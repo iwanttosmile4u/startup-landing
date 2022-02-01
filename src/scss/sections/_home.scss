@@ -1,0 +1,44 @@
+@use '../base/index' as *;
+
+.home {
+  padding: 0 0 40px 30px;
+  @include universal-flex(flex, row, space-between, flex-end);
+  &__main {
+    margin-top: 150px;
+  }
+
+  &__content {
+    @include universal-flex(flex, column, center, center);
+  }
+
+  &__title {
+    @include base-font-style($main-color, 30px, normal);
+  }
+
+  &__description {
+    @include base-font-style($main-color, 14px, lighter);
+    line-height: 22px;
+  }
+}
+
+.scrolling {
+  @include universal-flex(flex, column, space-between, center);
+  padding-top: 40px;
+  &__text {
+    @include base-font-style($hover-color, 12px, bold);
+    @include universal-flex(flex, row, space-between, center);
+    transform: rotate(-90deg);
+    margin-top: 45px;
+  }
+  &__text-item {
+    padding-right: 10px;
+    display: inline-block;
+  }
+  &__icon {
+    width: 15px;
+    display: inline-block;
+  }
+  &__icon-item {
+    width: 100%;
+  }
+}

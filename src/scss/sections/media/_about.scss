@@ -1,0 +1,20 @@
+@use '../../base/index' as *;
+
+@media (min-width: 768px) {
+  .about {
+    @include universal-flex(flex, row, center, center);
+    padding: 50px 0;
+  }
+
+  .cards {
+    padding: 0 25px;
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+  }
+}

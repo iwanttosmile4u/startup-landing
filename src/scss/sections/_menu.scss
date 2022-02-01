@@ -28,7 +28,7 @@
 
     &:hover {
       color: $hover-color;
-      transition: 0.7s ease-in-out;
+      transition: 0.8s ease;
     }
   }
 
@@ -49,6 +49,7 @@
     &:hover {
       box-shadow: none;
       color: white;
+      transition: 0.8s ease;
     }
   }
 }

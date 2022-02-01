@@ -21,7 +21,7 @@ menuBtn.addEventListener('click', () => {
 const showMenu = (btn, menuList) => {
   const toggleBtn = document.querySelector(btn);
   const menu = document.querySelector(menuList);
-  const main = document.querySelector('.main');
+  const main = document.querySelector('.home__main');
   if (toggleBtn && menu) {
     toggleBtn.addEventListener('click', () => {
       menu.classList.toggle('navigation__open');
