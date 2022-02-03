@@ -2,11 +2,29 @@
 
 .slider {
   @include universal-flex(flex, column, center, center);
-  padding: 0 30px 50px;
-  &__card {
+  padding: 0 40px 18px;
+  &__cards {
     position: relative;
-    padding: 25px 30px;
+    margin: 60px 0 0;
+  }
+
+  &__main-title {
+    @include base-font-style($main-color, 34px, bold);
+    text-align: center;
     margin-bottom: 50px;
+  }
+
+  &__symbol {
+    background-image: linear-gradient(to right, #71df8a 0%, #f9ffcc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__card {
+    @include universal-flex(flex, column, center, center);
+    position: relative;
+    padding: 45px 30px;
 
     &::before {
       content: '';
@@ -19,7 +37,40 @@
       z-index: 5;
       box-shadow: inset rgb(23, 24, 23) 0 0 10px, rgb(70, 66, 66) 0 0 25px;
     }
+
+    &--fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
   }
+
+  &__text-numb {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    @include base-font-style($hover-color, 18px, bold);
+  }
+
   &__img {
     min-width: 230px;
   }
@@ -38,11 +89,69 @@
     text-align: justify;
   }
 
-  &__nav-auto {
-    display: none;
+  &__prev {
+    @include base-font-style($hover-color, 36px, bold);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    cursor: pointer;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+
+    &:hover {
+      color: $main-color;
+    }
   }
 
-  &__nav-manual {
-    display: none;
+  &__next {
+    @include base-font-style($hover-color, 36px, bold);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+
+    &:hover {
+      color: $main-color;
+    }
   }
 }
+
+.dot {
+  display: inline-block;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin: 0 2px;
+  background: $hover-color;
+  border-radius: 50%;
+  margin-bottom: 60px;
+  &:hover {
+    background: $main-color;
+  }
+}
+
+.active {
+  background: $hover-color;
+
+  &:hover {
+    background: $main-color;
+  }
+}
+
+// .slider {
+//   display: none;
+// }
+
+// .dot {
+//   display: none;
+// }

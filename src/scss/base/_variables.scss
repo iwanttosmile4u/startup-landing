@@ -3,12 +3,8 @@ $main-font: 'Rubik', sans-serif;
 $dark-bgr: #000;
 
 $main-color: #fff;
-$gradient-color: linear-gradient(
-  to right,
-  rgba(184, 114, 213, 1) 0%,
-  rgba(20, 164, 212, 1) 100%
-);
-$hover-color: rgba(184, 114, 213, 1);
+$gradient-color: linear-gradient(to right, #71df8a 0%, #f9ffcc 100%);
+$hover-color: #71df8a;
 $description-color: #a9a4a4;
 
 $container-padding: 25px;

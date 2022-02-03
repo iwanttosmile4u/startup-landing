@@ -1,0 +1,113 @@
+@use '../base/index' as *;
+
+.form {
+  @include universal-flex(flex, column, space-between, center);
+  background: #0e0c0c;
+  width: 100%;
+
+  &__slider {
+    position: relative;
+    // margin: 0 40px 40px;
+  }
+
+  &__title {
+    @include base-font-style($main-color, 26px, bold);
+  }
+
+  &__symbol {
+    background-image: linear-gradient(to right, #71df8a 0%, #f9ffcc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__email-item {
+    border: solid 2px transparent;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      $gradient-color;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border-radius: 5px;
+    box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+    padding: 8px 15px;
+
+    &::placeholder {
+      color: $main-color;
+    }
+  }
+
+  &__checkboxes {
+    @include universal-flex(flex, column, unset, unset);
+    padding: 20px 0;
+  }
+
+  &__checkbox {
+    @include base-font-style($main-color, 16px, lighter);
+    position: relative;
+    padding: 10px 0 10px 25px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: $dark-bgr;
+      position: absolute;
+      left: 0;
+      top: 8px;
+      z-index: 1;
+      border: solid 2px transparent;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        $gradient-color;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+    }
+  }
+
+  &__checkbox-item {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+
+    &:checked {
+      &::before {
+        content: '\2713';
+        display: block;
+        color: $main-color;
+        position: absolute;
+        top: -6px;
+        left: -23px;
+        z-index: 2;
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__btn-item {
+    @include base-font-style($main-color, 18px, bold);
+    border-radius: 100rem;
+    padding: 0.5rem 2rem;
+    border: solid 3px transparent;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      $gradient-color;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+
+    &:hover {
+      box-shadow: none;
+      color: $dark-bgr;
+      transition: 0.8s ease;
+    }
+  }
+}

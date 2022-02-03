@@ -2,5 +2,68 @@
 
 @media (min-width: 768px) {
   .slider {
+    @include universal-flex(flex, column, unset, unset);
+    padding: 0 40px 18px;
+
+    &__main-title {
+      font-size: 52px;
+    }
+
+    &__card {
+      @include universal-flex(flex, row-reverse, space-between, center);
+      position: relative;
+      padding: 45px 30px 40px;
+    }
+
+    &__text-numb {
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 30px;
+      @include base-font-style($hover-color, 18px, bold);
+    }
+
+    &__img {
+      width: 50%;
+      margin-left: 40px;
+    }
+
+    &__img-item {
+      width: 100%;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__title {
+      @include base-font-style($main-color, 26px, bold);
+    }
+
+    &__description {
+      @include base-font-style($description-color, 14px, lighter);
+      text-align: unset;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .slider {
+    width: 80%;
+    &__cards {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }

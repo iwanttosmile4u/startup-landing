@@ -1,8 +1,8 @@
+// Hamburger menu - changing button
+
 const menuBtn = document.querySelector('.header__menu-btn');
 const burgerItem = document.querySelector('.header__burger-btn');
 let activeBtn = false;
-
-// Hamburger menu - changing button
 
 menuBtn.addEventListener('click', () => {
   if (!activeBtn) {
@@ -34,3 +34,40 @@ const showMenu = (btn, menuList) => {
   }
 };
 showMenu('#burger', '#nav');
+
+// Slider for tablet and desktop
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function addSlides(num) {
+  showSlides((slideIndex += num));
+}
+
+function currentSlide(numb) {
+  showSlides((slideIndex = numb));
+}
+
+function showSlides(elem) {
+  let i;
+  const slides = document.getElementsByClassName('slider__card');
+  const dots = document.getElementsByClassName('dot');
+
+  if (elem > slides.length) {
+    slideIndex = 1;
+  }
+
+  if (elem < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  }
+  slides[slideIndex - 1].style.display = 'flex';
+  dots[slideIndex - 1].className += ' active';
+}

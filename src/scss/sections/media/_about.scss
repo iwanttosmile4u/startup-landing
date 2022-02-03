@@ -18,3 +18,13 @@
     }
   }
 }
+
+@media (min-width: 992px) {
+  .about {
+    width: 80%;
+
+    &__home {
+      margin: 60px auto 30px;
+    }
+  }
+}

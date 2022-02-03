@@ -1,0 +1,52 @@
+@use '../../base/index' as *;
+
+@media (min-width: 768px) {
+  .form {
+    @include universal-flex(flex, column, unset, center);
+
+    &__wrapper {
+      @include universal-flex(flex, row, space-around, center);
+    }
+
+    &__content {
+      padding: 0 40px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__checkboxes {
+      padding: 0 40px;
+    }
+
+    &__checkbox {
+      margin: 28px 0 -20px;
+    }
+
+    &__btn {
+      padding: 30px 0 20px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .form {
+    &__slider {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__wrapper {
+      width: 80%;
+    }
+
+    &__content {
+      padding: 0;
+    }
+
+    &__checkboxes {
+      padding: 0;
+    }
+  }
+}

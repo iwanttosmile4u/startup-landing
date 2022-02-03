@@ -22,7 +22,7 @@
             >
               <g
                 transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
-                fill="rgba(184, 114, 213, 1)"
+                fill="#71DF8A"
                 
               >
                 <path
@@ -91,7 +91,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section class="about about__home">
         <div class="cards">
           <div class="cards__symbols cards__symbols--center">
             <span class="cards__symbols-item cards__symbols-item--left">&lt;</span>
@@ -139,8 +139,14 @@
           </div>
       </section>
 
-      <section class="slider">
-        <div class="slider__card">
+      <section class="slider slider__cards">
+        <h2 class="slider__main-title">
+          <span class="slider__symbol">&lt;</span>
+          Here is what you get
+          <span class="slider__symbol">&gt;</span>
+        </h2>
+        <div class="slider__card slider__card--fade">
+          <p class="slider__text-numb">1/5</p>
           <div class="slider__img">
             <img src="src/img/slider/img1.jpg" class="slider__img-item" alt="picture">
           </div>
@@ -156,7 +162,8 @@
             </p>
           </div>
         </div>
-        <div class="slider__card">
+        <div class="slider__card slider__card--fade">
+          <p class="slider__text-numb">2/5</p>
           <div class="slider__img">
             <img src="src/img/slider/img2.jpg" class="slider__img-item" alt="picture">
           </div>
@@ -172,7 +179,8 @@
             </p>
           </div>
         </div>
-        <div class="slider__card">
+        <div class="slider__card slider__card--fade">
+          <p class="slider__text-numb">3/5</p>
           <div class="slider__img">
             <img src="src/img/slider/img3.jpg" class="slider__img-item" alt="picture">
           </div>
@@ -188,7 +196,8 @@
             </p>
           </div>
         </div>
-        <div class="slider__card">
+        <div class="slider__card slider__card--fade">
+          <p class="slider__text-numb">4/5</p>
           <div class="slider__img">
             <img src="src/img/slider/img4.jpg" class="slider__img-item" alt="picture">
           </div>
@@ -204,7 +213,8 @@
             </p>
           </div>
         </div>
-        <div class="slider__card">
+        <div class="slider__card slider__card--fade">
+          <p class="slider__text-numb">5/5</p>
           <div class="slider__img">
             <img src="src/img/slider/img5.jpg" class="slider__img-item" alt="picture">
           </div>
@@ -219,113 +229,47 @@
               Architecto corrupti facere nesciunt eius fugit veritatis.
             </p>
           </div>
+        </div>
+        <a class="slider__prev" onclick="addSlides(-1)">&#10094;</a>
+        <a class="slider__next" onclick="addSlides(1)">&#10095;</a>
       </section>
+      <br>
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
 
-      <!-- <section class="slider">
-        <div class="slider__wrapper">
-          <div class="slider__card">
-            <div class="slider__img">
-              <img src="src/img/slider/img1.jpg" class="slider__img-item" alt="picture">
-            </div>
-            <div class="slider__content">
-              <h3 class="slider__title">Infrastructure Strategies</h3>
-              <p class="slider__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque 
-                numquam rerum temporibus mollitia consequatur blanditiis ad unde 
-                iure sed commodi nemo provident, qui dolorem voluptas quam. 
-                Cupiditate architecto est dolores. Sit, aliquid. Veniam, quam fuga! 
-                Voluptates, dignissimos animi non quae quia rem illum repellat labore 
-                pariatur corporis aliquam? Nesciunt voluptatibus vel facere tempore? 
-                Architecto corrupti facere nesciunt eius fugit veritatis.
-              </p>
+      <form class="form form__slider">
+        <div class="form__wrapper">
+          <div class="form__content">
+            <h3 class="form__title">
+              <span class="form__symbol">&lt;</span>
+              Subscribe
+              <span class="form__symbol">&gt;</span>
+            </h3>
+            <div class="form__email">
+              <input type="email" placeholder="Enter your email" class="form__email-item">
             </div>
           </div>
-          <div class="slider__card">
-            <div class="slider__img">
-              <img src="src/img/slider/img2.jpg" class="slider__img-item" alt="picture">
-            </div>
-            <div class="slider__content">
-              <h3 class="slider__title">Infrastructure Strategies</h3>
-              <p class="slider__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque 
-                numquam rerum temporibus mollitia consequatur blanditiis ad unde 
-                iure sed commodi nemo provident, qui dolorem voluptas quam. 
-                Cupiditate architecto est dolores. Sit, aliquid. Veniam, quam fuga! 
-                Voluptates, dignissimos animi non quae quia rem illum repellat labore 
-                pariatur corporis aliquam? Nesciunt voluptatibus vel facere tempore? 
-                Architecto corrupti facere nesciunt eius fugit veritatis.
-              </p>
-            </div>
-          </div>
-          <div class="slider__card">
-            <div class="slider__img">
-              <img src="src/img/slider/img3.jpg" class="slider__img-item" alt="picture">
-            </div>
-            <div class="slider__content">
-              <h3 class="slider__title">Infrastructure Strategies</h3>
-              <p class="slider__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque 
-                numquam rerum temporibus mollitia consequatur blanditiis ad unde 
-                iure sed commodi nemo provident, qui dolorem voluptas quam. 
-                Cupiditate architecto est dolores. Sit, aliquid. Veniam, quam fuga! 
-                Voluptates, dignissimos animi non quae quia rem illum repellat labore 
-                pariatur corporis aliquam? Nesciunt voluptatibus vel facere tempore? 
-                Architecto corrupti facere nesciunt eius fugit veritatis.
-              </p>
-            </div>
-          </div>
-          <div class="slider__card">
-            <div class="slider__img">
-              <img src="src/img/slider/img4.jpg" class="slider__img-item" alt="picture">
-            </div>
-            <div class="slider__content">
-              <h3 class="slider__title">Infrastructure Strategies</h3>
-              <p class="slider__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque 
-                numquam rerum temporibus mollitia consequatur blanditiis ad unde 
-                iure sed commodi nemo provident, qui dolorem voluptas quam. 
-                Cupiditate architecto est dolores. Sit, aliquid. Veniam, quam fuga! 
-                Voluptates, dignissimos animi non quae quia rem illum repellat labore 
-                pariatur corporis aliquam? Nesciunt voluptatibus vel facere tempore? 
-                Architecto corrupti facere nesciunt eius fugit veritatis.
-              </p>
-            </div>
-          </div>
-          <div class="slider__card">
-            <div class="slider__img">
-              <img src="src/img/slider/img5.jpg" class="slider__img-item" alt="picture">
-            </div>
-            <div class="slider__content">
-              <h3 class="slider__title">Infrastructure Strategies</h3>
-              <p class="slider__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque 
-                numquam rerum temporibus mollitia consequatur blanditiis ad unde 
-                iure sed commodi nemo provident, qui dolorem voluptas quam. 
-                Cupiditate architecto est dolores. Sit, aliquid. Veniam, quam fuga! 
-                Voluptates, dignissimos animi non quae quia rem illum repellat labore 
-                pariatur corporis aliquam? Nesciunt voluptatibus vel facere tempore? 
-                Architecto corrupti facere nesciunt eius fugit veritatis.
-              </p>
-            </div>
-          </div>
-          <div class="slider__btns">
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-            <input type="radio" name="radio-btn" id="radio5">
-          </div>
-          <div class="slider__nav-auto">
-            <div class="slider__nav-btn1"></div>
-            <div class="slider__nav-btn2"></div>
-            <div class="slider__nav-btn3"></div>
-            <div class="slider__nav-btn4"></div>
-            <div class="slider__nav-btn5"></div>
+          <div class="form__checkboxes">
+            <label class="form__checkbox">
+              <input type="checkbox" class="form__checkbox-item">
+              Take a part of special offer
+            </label>
+            <label class="form__checkbox">
+              <input type="checkbox" class="form__checkbox-item">
+              Order the presentation
+            </label>
           </div>
         </div>
-        <div class="slider__nav-manual">
-          <label for="radio1" class="slider__manual-btn"></label>
-          <label for="radio2" class="slider__manual-btn"></label>
-          <label for="radio3" class="slider__manual-btn"></label>
-          <label for="radio4" class="slider__manual-btn"></label>
-          <label for="radio5" class="slider__manual-btn"></label>
+           
+        <div class="form__btn">
+          <button class="form__btn-item">Submit</button>
         </div>
-      </section> -->
+      </form>
     </main>
     <script src="dist/js/index.min.js"></script>
   </body>
