@@ -32,6 +32,7 @@
     background-clip: content-box, border-box;
     border-radius: 5px;
     box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+    color: $main-color;
     padding: 8px 15px;
 
     &::placeholder {
